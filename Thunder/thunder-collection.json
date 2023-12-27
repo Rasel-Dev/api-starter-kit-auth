@@ -1,0 +1,334 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Auth Rest Client",
+    "dateExported": "2023-12-26T18:09:27.631Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "f779f923-9c98-4b8f-882e-7a0007d88e28",
+            "name": "Json Web Key",
+            "containerId": "",
+            "created": "2023-10-20T12:04:27.557Z",
+            "sortNum": 13750
+        },
+        {
+            "_id": "36356ce7-1710-49ae-83de-e596954f789c",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2023-10-03T17:02:25.677Z",
+            "sortNum": 20625
+        },
+        {
+            "_id": "b3c3e016-ff35-43e1-9b65-e423b4bdbd3c",
+            "name": "User",
+            "containerId": "",
+            "created": "2023-10-03T17:00:23.612Z",
+            "sortNum": 24062.5
+        }
+    ],
+    "requests": [
+        {
+            "_id": "3be8bec1-40ab-4edd-8704-4522e440a08e",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "36356ce7-1710-49ae-83de-e596954f789c",
+            "name": "Create User",
+            "url": "/auth/signup",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-10-03T17:00:23.613Z",
+            "modified": "2023-10-11T13:44:32.844Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fullname\":\"{{#name}}\",\n  \"username\":\"{{#name}}_{{#number}}\",\n  \"email\":\"{{#email}}\",\n  \"password\":\"password\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{access}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "cookie._token",
+                    "action": "setto",
+                    "value": "{{refresh}}"
+                }
+            ]
+        },
+        {
+            "_id": "3604a199-1c04-44f1-ab2b-adb5d0bd0eb9",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "f779f923-9c98-4b8f-882e-7a0007d88e28",
+            "name": "Get Jwk",
+            "url": "/auth/jwk",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-10-09T02:02:25.931Z",
+            "modified": "2023-10-09T23:15:25.404Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f165b2dd-91d6-4885-a712-81c2bbf06ffe",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "36356ce7-1710-49ae-83de-e596954f789c",
+            "name": "Login",
+            "url": "/auth/signin",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-10-03T17:00:23.612Z",
+            "modified": "2023-10-20T12:06:53.110Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"conroy_706996\",\n  \"password\":\"password\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "cookie._token",
+                    "action": "setto",
+                    "value": "{{refresh}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{access}}"
+                }
+            ],
+            "preReq": {
+                "options": {
+                    "clearCookies": true
+                }
+            }
+        },
+        {
+            "_id": "8ddbacb2-f0c3-4781-8310-8c64980c2e76",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "f779f923-9c98-4b8f-882e-7a0007d88e28",
+            "name": "Update Jwk",
+            "url": "/auth/jwk",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-10-09T02:54:43.162Z",
+            "modified": "2023-10-09T23:16:11.703Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "5dfec92d-7d08-4db0-a6d3-ccf001e395cf",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "36356ce7-1710-49ae-83de-e596954f789c",
+            "name": "Refresh Token",
+            "url": "/auth/refresh",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-10-09T00:43:27.613Z",
+            "modified": "2023-10-09T23:15:07.036Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"token\":\"{{refresh}}\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{access}}"
+                },
+                {
+                    "type": "set-env-var",
+                    "custom": "json.refresh",
+                    "action": "setto",
+                    "value": "{{refresh}}"
+                }
+            ]
+        },
+        {
+            "_id": "a5a9976e-ff60-48f5-89c5-b277df7d79c1",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "36356ce7-1710-49ae-83de-e596954f789c",
+            "name": "Update User",
+            "url": "/auth/email",
+            "method": "PATCH",
+            "sortNum": 26250,
+            "created": "2023-10-08T22:00:31.536Z",
+            "modified": "2023-10-25T20:09:43.493Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"new_email\":\"raseldeveloper@gmail.com\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b394e27c-91a3-42f3-921e-ac17fb8bfdc0",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "b3c3e016-ff35-43e1-9b65-e423b4bdbd3c",
+            "name": "Profile",
+            "url": "/users",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-10-03T17:00:23.614Z",
+            "modified": "2023-10-09T23:17:09.364Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "877cae0a-bc6a-459b-8471-9afa0654d8f0",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "36356ce7-1710-49ae-83de-e596954f789c",
+            "name": "Forget Password",
+            "url": "/auth/forget-password",
+            "method": "POST",
+            "sortNum": 36250,
+            "created": "2023-10-09T23:22:31.624Z",
+            "modified": "2023-12-26T18:00:20.638Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user\":\"conroy_706996\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{forgot_token}}"
+                }
+            ]
+        },
+        {
+            "_id": "b8040ac9-c3bb-43ef-95d9-48350e5af0f4",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "b3c3e016-ff35-43e1-9b65-e423b4bdbd3c",
+            "name": "Activity",
+            "url": "/users/activities",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-10-10T23:08:45.479Z",
+            "modified": "2023-10-10T23:09:56.703Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "410ca19b-cc5e-43d7-a633-e188990431ae",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "36356ce7-1710-49ae-83de-e596954f789c",
+            "name": "Reset Password",
+            "url": "/auth/reset-password?token={{forgot_token}}",
+            "method": "POST",
+            "sortNum": 46250,
+            "created": "2023-10-10T00:32:33.049Z",
+            "modified": "2023-10-10T00:34:22.924Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "{{forgot_token}}"
+                }
+            ],
+            "params": [
+                {
+                    "name": "token",
+                    "value": "{{forgot_token}}",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"new_password\":\"password\",\n  \"confirm_password\":\"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "{{base_uri}}"
+        },
+        "envId": "fe3fa920-0862-4a6b-9ea4-6703826996ac"
+    }
+}

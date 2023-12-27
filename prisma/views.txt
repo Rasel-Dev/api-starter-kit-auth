@@ -1,0 +1,3 @@
+CREATE OR REPLACE VIEW user_activities_v
+AS
+SELECT user_id, COUNT(1) AS activity, "updatedAt"::DATE FROM user_activities GROUP BY user_id, "updatedAt"::DATE ORDER BY "updatedAt" DESC

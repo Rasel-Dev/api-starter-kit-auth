@@ -1,0 +1,20 @@
+{
+  "client": "Thunder Client",
+  "environmentName": "Auth Service Env",
+  "dateExported": "2023-10-12T00:05:56.320Z",
+  "version": "1.0",
+  "variables": [
+    {
+      "name": "base_uri",
+      "value": "https://localhost:8000/v1"
+    },
+    {
+      "name": "refresh",
+      "value": "eyJ0eXAiOiJqd3QiLCJpc3MiOiJodHRwczovL3lvdXJkb21haW4uY29tIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJXZVl4REJYME5SQXpncUE2VWFDMmxUbXhoNWFoTDZGbC1UVUh1TnJVNVFvIn0.eyJqdGkiOiI5NThhMjE0NC0zYzg0LTQ1MGYtODVlZC0zYTg4NDNhZjVlODkiLCJleHAiOjE2OTc2NzM5MjcsImlhdCI6MTY5NzA2OTEyNywic2NvcGVzIjpbIlVTRVIiXSwiYXVkIjoiMGMzMmM5NDYtNWMxNS00ODVmLTllNTQtNjM1MjJkMjQ2N2NmIn0.hYLg9sAh2vrSU-Ega9UBOvbvHg5diKgop1xNAaR4dw4O565b3maFDMKnd4aT3VFHUiANPKXjBUPvsWfkBXzUCQEcpzOvEzmUbnlrgXYfeH-cVuu15D8DoKLH5TqHlSJ3T9zdDFukbLSjhoh6lz9aamLrZBeddNtccSAJYPnrztM2Bt35BiVlapb2yxyupoIMbiKzSuh07LEPba9v7HKO1QgkJCSwBVjBZsV9TMNXA53JzMNDblhzVaaQ3DXbHxQ7PQRVtijAGJxPALA50sICiJ4w6S5rp3HJ273LpFaVG6JfUfaPk8qVfmFZVR0VCed-2ji8R_PeE6iMk3dZZF17bQ"
+    },
+    {
+      "name": "access",
+      "value": "eyJ0eXAiOiJqd3QiLCJpc3MiOiJodHRwczovL3lvdXJkb21haW4uY29tIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJXZVl4REJYME5SQXpncUE2VWFDMmxUbXhoNWFoTDZGbC1UVUh1TnJVNVFvIn0.eyJqdGkiOiJiMzQyZDQ0Ny1jMTNiLTQxOGEtYTk0Yy02MzgwMGIwZmFmMTAiLCJleHAiOjE2OTcwNzAwMjcsImlhdCI6MTY5NzA2OTEyNywic2NvcGVzIjpbIlVTRVIiXSwiYXVkIjoiMGMzMmM5NDYtNWMxNS00ODVmLTllNTQtNjM1MjJkMjQ2N2NmIn0.LZ7CtTWS_rNwM1MoYjwOrJ7jSf5OPiI_f1Ir1wriMfhYAkA3hfFZIoWhaVscw-rpAy3qOrDeEfbOYUK7V8eotlJLEiXGBMVLNVBNtgFc1d2WapVTEcmcC3N01PihA1mQXG38vt7i1V1G_87GZa1yGjk6hCNCzfUJHWFNAWcirXDooJf_kLpEi-0kUVM4b8PuR6NDddsgbabfN4YNoS4UNMfohQpcIgtC_h3RZzzxcXUHA72kFobsTuOWgwFQeNJdXuNJBXbfC5VB95x9v_nDeZRStxd6vuLFPYOe5ekogXLnXRp4P5qCssvfx5UfYKxIvAsouhP1jYe_V-tfylDN5A"
+    }
+  ]
+}
