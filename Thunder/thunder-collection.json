@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Auth Rest Client",
-    "dateExported": "2023-12-26T18:09:27.631Z",
+    "dateExported": "2023-12-27T20:57:40.482Z",
     "version": "1.1",
     "folders": [
         {
@@ -24,6 +24,13 @@
             "containerId": "",
             "created": "2023-10-03T17:00:23.612Z",
             "sortNum": 24062.5
+        },
+        {
+            "_id": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "Admin",
+            "containerId": "b3c3e016-ff35-43e1-9b65-e423b4bdbd3c",
+            "created": "2023-12-27T17:23:58.909Z",
+            "sortNum": 34062
         }
     ],
     "requests": [
@@ -84,6 +91,115 @@
             "tests": []
         },
         {
+            "_id": "b1a704de-a732-4d7a-8cff-1cf622d01fea",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "List of users",
+            "url": "/users?list=active",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-12-26T19:02:18.354Z",
+            "modified": "2023-12-27T20:55:42.046Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "list",
+                    "value": "active",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b5bf5adf-bae8-467c-93aa-ee27b44692f1",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "List of active users status",
+            "url": "/users/active-status",
+            "method": "GET",
+            "sortNum": 11250,
+            "created": "2023-12-27T20:53:50.845Z",
+            "modified": "2023-12-27T20:56:10.545Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1b761f5c-6e28-4be0-863d-e45be97bd785",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "Search users",
+            "url": "/users/search?_search=ra&list=active",
+            "method": "GET",
+            "sortNum": 12500,
+            "created": "2023-12-27T20:14:52.485Z",
+            "modified": "2023-12-27T20:38:36.034Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "_search",
+                    "value": "ra",
+                    "isPath": false
+                },
+                {
+                    "name": "list",
+                    "value": "active",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "abe108a2-417b-4ce7-96b0-f9edcc8a573e",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "Get user profile",
+            "url": "/users/71b866e7-f98a-4210-bc8f-284863f1f4a8",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-12-27T19:22:00.458Z",
+            "modified": "2023-12-27T19:22:20.082Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
             "_id": "f165b2dd-91d6-4885-a712-81c2bbf06ffe",
             "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
             "containerId": "36356ce7-1710-49ae-83de-e596954f789c",
@@ -92,7 +208,7 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2023-10-03T17:00:23.612Z",
-            "modified": "2023-10-20T12:06:53.110Z",
+            "modified": "2023-12-27T20:09:54.858Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -102,7 +218,7 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"username\":\"conroy_706996\",\n  \"password\":\"password\"\n}",
+                "raw": "{\n  \"username\":\"raseldev\",\n  \"password\":\"password\"\n}",
                 "form": []
             },
             "tests": [
@@ -145,6 +261,34 @@
             "auth": {
                 "type": "bearer",
                 "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4e2a6919-8c7d-4a61-9fcf-7b53d779d92c",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "Update user details",
+            "url": "/users/71b866e7-f98a-4210-bc8f-284863f1f4a8",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-12-27T17:24:08.565Z",
+            "modified": "2023-12-27T17:30:19.162Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fullname\": \"Rasel Developer\",\n  \"username\": \"raseldev1\",\n  \"email\": \"raseldeveloper3@gmail.com\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
             },
             "tests": []
         },
@@ -218,11 +362,11 @@
             "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
             "containerId": "b3c3e016-ff35-43e1-9b65-e423b4bdbd3c",
             "name": "Profile",
-            "url": "/users",
+            "url": "/users/profile",
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-10-03T17:00:23.614Z",
-            "modified": "2023-10-09T23:17:09.364Z",
+            "modified": "2023-12-27T16:32:05.688Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -230,6 +374,34 @@
                 }
             ],
             "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d503f75-40b7-4947-b296-42ed729471b1",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "Update User Activation",
+            "url": "/users/71b866e7-f98a-4210-bc8f-284863f1f4a8/activation",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2023-12-27T17:30:37.002Z",
+            "modified": "2023-12-27T17:31:48.352Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"action\": \"active\"\n}",
+                "form": []
+            },
             "auth": {
                 "type": "bearer",
                 "bearer": "{{access}}"
@@ -272,11 +444,34 @@
             "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
             "containerId": "b3c3e016-ff35-43e1-9b65-e423b4bdbd3c",
             "name": "Activity",
-            "url": "/users/activities",
+            "url": "/users/profile/activities",
             "method": "GET",
             "sortNum": 40000,
             "created": "2023-10-10T23:08:45.479Z",
-            "modified": "2023-10-10T23:09:56.703Z",
+            "modified": "2023-12-27T16:38:36.925Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{access}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a79ad3f5-c774-4a62-ae61-a224ba4075b8",
+            "colId": "926e69bd-0518-4d1e-abb5-18a02b1e7cdb",
+            "containerId": "71f5f3ac-8eb1-4108-9ea5-23557e1ccced",
+            "name": "Delete User",
+            "url": "/users/71b866e7-f98a-4210-bc8f-284863f1f4a8",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-12-27T17:40:52.412Z",
+            "modified": "2023-12-27T17:41:09.929Z",
             "headers": [
                 {
                     "name": "Content-Type",
