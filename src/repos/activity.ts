@@ -98,5 +98,12 @@ class ActivityRepo {
       }
     })
   }
+
+  /**
+   * Get date of activity status
+   */
+  public getStatus() {
+    return prismadb.$queryRaw`SELECT COUNT(1)::INT AS active_users, "updatedAt" AS date_at FROM user_activities_v GROUP BY "updatedAt" ORDER BY "updatedAt" DESC`
+  }
 }
 export default new ActivityRepo()

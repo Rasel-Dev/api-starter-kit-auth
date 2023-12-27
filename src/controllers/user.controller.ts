@@ -235,6 +235,18 @@ class UserController extends BaseController {
   }
 
   /**
+   * Get activities
+   */
+  private getActivityStatus = async (_req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const activities = await activity.getStatus()
+      res.json(activities)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  /**
    * configure router
    */
   public configureRoutes() {
@@ -244,6 +256,8 @@ class UserController extends BaseController {
     // ADMIN
     this.router.get('/', this.isAuth(['admin']), this.getListOfUsers)
     this.router.get('/search', this.isAuth(['admin']), this.getListOfSearchedUsers)
+    this.router.get('/active-status', this.isAuth(['admin']), this.getActivityStatus)
+
     this.router.get('/:userId', this.isAuth(['admin']), this.getUserProfile)
     this.router.patch('/:userId', this.isAuth(['admin']), this.updateUserDetails)
     this.router.patch('/:userId/activation', this.isAuth(['admin']), this.updateUserActivation)
